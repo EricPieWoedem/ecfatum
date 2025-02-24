@@ -1,0 +1,297 @@
+import React, { useState } from "react";
+import Modal from "react-modal";
+import { FaCogs, FaLaptopCode, FaChartLine, FaShieldAlt, FaChalkboardTeacher, FaDatabase } from "react-icons/fa";
+import { motion } from "framer-motion";
+import "./Services.css";
+
+Modal.setAppElement("#root");
+
+const services = [
+  {
+    title: "System Design",
+    detail: "ERP, E-commerce, and Government solution designs to streamline operations.",
+    icon: <FaCogs />,
+    LearnMoreTitle:"System Design for ERP, E-commerce, and Government Solutions",
+    LearnMoreTitle1:"Learn More",
+    moreInfo: [
+            "Ecfatum provides comprehensive system design tailored to meet the unique needs of enterprises, online businesses, and government institutions.",
+            " For ERP systems, we streamline core business processes, improve resource planning, and optimize workflows. ",
+            "Our e-commerce solutions are designed with secure payment gateways, intuitive user interfaces, and scalability in mind. ",
+            "Government solutions focus on transparency, compliance, and user-friendly platforms that improve citizen engagement.",
+    ],
+    image1:"/erp6.webp",
+    image2:"/erp5.webp",
+    images: ["/pic.jpg","/er (1).png", "/er (2).png"],
+    gallery1:"/erp3.png",
+    galleryInfo1:"An enterprise resource planning (ERP) software is an enterprise-wide application software package that integrates all necessary business functions into a single system with a common database. Enterprise resource planning (ERP) systems integrate and streamline the business processes of an organization across departmental and geographical borders.",
+    gallery2:"bg8.jpg",
+    galleryInfo2:"A system design for ERP, e-commerce, and government solutions should prioritize modularity, scalability, security, and integration capabilities, allowing for seamless data flow between different systems while catering to the unique needs of each domain, including robust user access controls, compliance with regulations, and streamlined citizen interaction for government functionalities. ",
+    importance: [
+        "Optimizes workflows for better resource management.",
+        "Provides accessible platforms enhancing citizen and customer engagement.",
+        "Ensures regulatory compliance and secure operations.",
+        "Offers scalable solutions for growing organizational needs."
+    ],
+    benefit:[
+        "Streamline operations to reduce costs and increase productivity.",
+        "User-friendly systems that improve adoption and satisfaction.",
+        "Easily scalable to accommodate future growth.",
+        "Meet industry-specific regulations effortlessly."
+    ]
+    
+  },
+  {
+    title: "Application Development",
+    detail: "Quality assurance and seamless deployment for your applications.",
+    icon: <FaLaptopCode />,
+    LearnMoreTitle:"Application Development, Quality Assurance, and Deployment",
+    moreInfo: [
+            "At Ecfatum, we offer end-to-end application development services, from initial concept to post-launch support. ",
+            " Our development process includes user-centered design, agile methodologies, and cutting-edge technologies.  ",
+            "Quality assurance ensures that applications are bug-free, secure, and meet client specifications through rigorous testing protocols. ",
+            "Deployment is handled with precision, utilizing continuous integration and deployment (CI/CD) pipelines for smooth rollouts and updates.",
+    ],
+    image1:"appdev2.jpeg",
+    image2:"appdev1.jpg",
+    images: ["/appdev.", "/eco.webp", "/icon.jpg"],
+    images: ["/appdev1.jpg", "/appdev2.jpeg", "/appdev3.jpg"],
+    gallery:"bg8.jpg",
+    importance: [
+        "Accelerates digital transformation",
+        "Reduces downtime through rigorous quality checks.",
+        "Enhances user satisfaction with reliable apps.",
+        "Keeps applications up-to-date and secure."
+    ],
+    benefit:[
+        " Faster Time-to-Market: Agile processes ensure quick delivery.",
+        " Tailored Solutions: Built to meet your business needs.",
+        "Robust Support: Ongoing assistance post-deployment.",
+        "User-Friendly Designs: Increase engagement and satisfaction."
+    ]
+  },
+  {
+    title: "Business Analysis",
+    detail: "Analyzing business problems and engineering effective solutions.",
+    icon: <FaChartLine />,
+    LearnMoreTitle:" Business Problems Analysis and Solution Engineering",
+    moreInfo: [
+            "At Ecfatum, we analyze complex business problems using data-driven methodologies to identify root causes and engineer effective solutions.",
+            "Our process involves stakeholder consultations, process mapping, and technological assessments.",
+            "We craft solutions that enhance productivity, reduce costs, and align with organizational goals.",
+    ],
+    image1:"bus4.webp",
+    image2:"bus5.webp",
+    images: ["/bus1.jpg", "/bus2.jpg", "/bus3.jpg"],
+    gallery:"bg8.jpg",
+    importance: [
+        "Identifies inefficiencies and cost-saving opportunities.",
+        "Facilitates data-driven decisions.",
+        "Aligns technology with business objectives.",
+        "Improves operational productivity."
+    ],
+    benefit:[
+        "Customized Solutions: Target specific challenges.",
+        "Cost Efficiency: Reduce waste and unnecessary expenses.",
+        "Measurable Results: Track and evaluate improvements.",
+        "Collaborative Approach: Engage stakeholders throughout the process."
+    ]
+  },
+  {
+    title: "System Security",
+    detail: "Conducting technical audits to secure your systems.",
+    icon: <FaShieldAlt />,
+    LearnMoreTitle:"System Security and Technical Audits",
+    moreInfo: [
+            "We offer comprehensive system security services to safeguard your digital assets. ",
+            "Our technical audits identify vulnerabilities, assess compliance with industry standards, and provide actionable recommendations. ",
+            "Services include penetration testing, vulnerability assessments, and continuous monitoring to detect and prevent cyber threats.",
+    ],
+    image1:"sec5.jpg",
+    image2:"sec4.jpg",
+    images: ["/sec1.webp", "/sec2.jpg", "/sec3.jpg"],
+    gallery:"bg8.jpg",
+    importance: [
+        "Protects against cyber-attacks and data breaches.",
+        "Ensures compliance with global security standards.",
+        "Identifies and mitigates potential risks.",
+        "Builds stakeholder and customer trust."
+    ],
+    benefit:[
+        " Proactive Security Measures: Detect threats before they arise.",
+        " Detailed Audit Reports: Gain actionable recommendations.",
+        "Continuous Monitoring: Maintain security over time.",
+        "Improved System Reliability: Reduce operational disruptions."
+    ]
+  },
+  {
+    title: "IT Training & Support",
+    detail: "Professional training and round-the-clock IT support.",
+    icon: <FaChalkboardTeacher />,
+    LearnMoreTitle:"Professional training and round-the-clock IT support.",
+    moreInfo: [
+            "Ecfatum offers tailored IT training programs to empower your workforce with the necessary technical skills.",
+            " Our training covers various IT tools, platforms, and best practices, delivered through virtual and on-site sessions.",
+            " Ongoing support ensures your team can handle technical challenges effectively, minimizing downtime and maximizing productivity.",
+    ],
+    image1:"train3.jpg",
+    image2:"train2.jpg",
+    images: ["/train2.jpg", "/train3.jpg", "/train4.jpg"],
+    gallery:"bg8.jpg",
+    importance: [
+        "Reduces downtime with skilled staff.",
+        "Improves technology adoption rates.",
+        "Keeps teams updated with evolving tech trends.",
+        "Enhances overall organizational efficiency."
+    ],
+    benefit:[
+        " Flexible Learning: On-site or virtual training options.",
+        "Continuous Support: Quick response to technical issues.",
+        "Boosted Confidence: Empower employees to manage systems effectively.",
+        "Practical Resources: Access to comprehensive learning materials."
+    ]
+  },
+  {
+    title: "Data Management",
+    detail: "Efficient systems for managing and recording data.",
+    icon: <FaDatabase />,
+    LearnMoreTitle:"Efficient systems for managing and recording data.",
+    moreInfo: [
+            "Our data and record management solutions ensure the secure storage, easy retrieval, and efficient management of organizational data. ",
+            "We design systems that automate data backup, implement access controls, and comply with data protection regulations.",
+            "These solutions reduce data loss risks and improve data-driven decision-making.",
+    ],
+    image1:"data2.webp",
+    image2:"data3.jpg",
+    images: ["/data1.webp", "/data2.webp", "/data3.jpg"],
+    gallery:"bg8.jpg",
+    importance: [
+        "Ensures data accuracy and quick retrieval.",
+        "Reduces risks of data loss and unauthorized access.",
+        "Complies with data protection laws.",
+        "Enhances operational efficiency."
+    ],
+    benefit:[
+        "Automated Processes: Reduce manual errors and save time.",
+        " Secure Data Storage: Protect sensitive information.",
+        "Real-Time Insights: Make data-driven decisions.",
+        "Cost-Effective Solutions: Lower data management expenses."
+    ]
+  }
+];
+
+const Services = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
+
+  const openModal = (service) => {
+    setSelectedService(service);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => setModalIsOpen(false);
+
+  return (
+    <section className="relative w-full min-h-screen flex flex-col justify-center items-center text-white overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute w-full h-full object-cover -z-10"
+        src="/video1.mp4"
+      />
+
+      <h1 className="service-title text-4xl font-bold my-15">Our Services</h1>
+      <div className="services flex flex-wrap justify-center gap-6 px-4 w-full max-w-7xl mb-15">
+        {services.map((service, index) => (
+          <motion.div
+            key={index}
+            className="card max-w-xs w-full"
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ delay: index * 0.2, duration: 0.5 }}
+            viewport={{ once: false }}
+            whileInView={{ opacity: 1, y: 0 }}
+        
+          >
+            <i>{service.icon}</i>
+            <div className="title">{service.title}</div>
+            <div className="detail">{service.detail}</div>
+            <button onClick={() => openModal(service)}>Learn More</button>
+          </motion.div>
+        ))}
+      </div>
+
+      {selectedService && (
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          className="modal-content"
+          overlayClassName="modal-overlay"
+        >
+           <h2 className="modal-title">{selectedService.title}</h2>
+          <div className="modal-container">
+            <div className="modal-info">
+              <h3 className="modal-info-title">{selectedService.LearnMoreTitle}</h3>
+              <ul className="modal-detail">           
+                {selectedService.moreInfo.map((point, i) => (
+                <p key={i}>{point}</p>
+                ))}
+              </ul>  
+                
+            </div>
+            <div class="slideshow">
+                  <div class="slides">
+                        {selectedService.images.map((img, i) => (
+                        <img key={i} src={img} alt={`Slide ${i + 1}`} />
+                        ))}
+                   </div>
+            </div>
+            <div className="gallery-show">
+                <div className="gallery bg-cover bg-center rounded-2xl p-4" style={{ backgroundImage: `url(${selectedService.image1})` }}>
+                   <div className="gallery-image"></div>
+                    <div className="gallery_content">
+                        <div className="gallery_title">{selectedService.LearnMoreTitle}</div>
+                        <div className="gallery_description">
+                           {selectedService.galleryInfo1}
+                        </div>
+                    </div>
+                </div>
+                <div className="gallery  bg-cover bg-center rounded-2xl p-4 " style={{ backgroundImage: `url(${selectedService.image2})`,backgroundColor: 'rgba(0, 0, 0, 0.9)' }}>
+                    <div className="gallery-image"></div>
+                    <div className="gallery_content">
+                        <div className="gallery_title">{selectedService.LearnMoreTitle}</div>
+                        <div className="gallery_description">
+                            {selectedService.galleryInfo2}
+                        </div>
+                    </div>
+                </div>
+             </div>
+             <div className="importance-benefit-display">
+                <div className="importance-benefit-title">{selectedService.title}</div>
+                <div className="importance-benefit">
+                    <div className="importance">
+                        <ul className="list-disc list-inside space-y-1">
+                            <h2>Importance</h2>
+                            {selectedService.importance.map((point, i) => (
+                            <li key={i}>{point}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="benefit">
+                    <ul className="list-disc list-inside space-y-1">
+                            <h2>Benefit</h2>
+                            {selectedService.benefit.map((point, i) => (
+                            <li key={i}>{point}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+             </div>
+          </div>
+          <button onClick={closeModal} className="modal-close">Close</button>
+        </Modal>
+      )}
+    </section>
+  );
+};
+
+export default Services;
