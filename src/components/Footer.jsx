@@ -1,84 +1,92 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaYoutube, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaYoutube, FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6"; 
 import A from '../assets/A.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-950 text-white pt-12 ">
-      <div className="container mx-auto px-15 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-        {/* Column 1: Company Info */}
+    <footer className="bg-gradient-to-br from-yellow-300 to-red-500 text-black pt-12 ">
+      <div className="container mx-auto px-15 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_150px_1fr_1fr]">
+
         <div>
           <div className="flex items-center space-x-2">
-             <img className="h-10 w-10" src={A} alt="ecfatum-logo" />
-            <span className="text-xl font-semibold">Ecfatum Limited</span>
+             <img className="h-18 w-55 bg-black border-none p-1" src={A} alt="ecfatum-logo" />
           </div>
-          <p className="text-sm mt-4">
-            Brief description of the company goes here. You can describe what your company does.
+          <p className="mt-4 w-[70%]">
+          We provide cutting-edge solutions tailored to your needs, designed for efficiency and innovation.
           </p>
         </div>
 
         {/* Column 2: Navigation */}
-        <div>
-          <h3 className="font-medium mb-3">Browse</h3>
-          <ul className="space-y-2 font-extralight text-sm">
-            <li><Link to="/" className=" hover:text-amber-400">Home</Link></li>
-            <li><Link to="/about" className=" hover:text-amber-500">About</Link></li>
-            <li><Link to="/services" className=" hover:text-amber-500">Services</Link></li>
-            <li><Link to="/contact" className=" hover:text-amber-500">Contact</Link></li>
+        <div className="">
+          <h3 className="font-semibold mb-3">Browse</h3>
+          <ul className="space-y-2">
+            <li><Link to="/" className=" hover:underline">Home</Link></li>
+            <li><Link to="/about" className=" hover:underline">About</Link></li>
+            <li><Link to="/services" className=" hover:underline">Services</Link></li>
+            <li><Link to="/contact" className=" hover:underline">Contact</Link></li>
           </ul>
         </div>
 
         {/* Column 3: Services */}
         <div>
-          <h3 className="font-medium mb-3">Services</h3>
-          <ul className="space-y-2 font-extralight text-sm">
-            <li>System Design</li>
-            <li>Application Development</li>
-            <li>Business Analysis</li>
-            <li>System Security</li>
-            <li>IT Training & Support</li>
-            <li>Data Management
-            </li>
+          <h3 className="font-semibold mb-3">Services</h3>
+          <ul className="space-y-2">
+          <li><Link to="/services" className=" hover:underline">System Design</Link></li>
+          <li><Link to="/services" className=" hover:underline">Application Development</Link></li>
+          <li><Link to="/services" className=" hover:underline">Business Analysis</Link></li>
+          <li><Link to="/services" className=" hover:underline">System Security</Link></li>
+          <li><Link to="/services" className=" hover:underline">IT Training & Support</Link></li>
+          <li><Link to="/services" className=" hover:underline">Data Management</Link></li>
           </ul>
         </div>
 
         {/* Column 4: Contact Info */}
         <div>
-          <h3 className="font-medium mb-3">Contact</h3>
-          <ul className="space-y-2 font-extralight text-sm">
-            <li className="flex items-center space-x-2">
-              <FaMapMarkerAlt className="text-amber-500" /> <span>123 Street, City, Country</span>
+          <h3 className="font-semibold mb-3">Contact</h3>
+          <ul className="flex flex-col space-y-2 gap-2">
+            <li className="flex items-start space-x-2">
+            <FaMapMarkerAlt className="text-black text-4xl"/>
+              <ul className="text-sm">
+                <li className="mb-2"><a href="https://maps.app.goo.gl/zWKRzBJcxdy5KBk49" target="_blank" rel="noopener noreferrer" className="hover:underline">6-7 Saxel Street, Tesano, Accra, Ghana</a></li>
+                <li><a href="https://maps.app.goo.gl/3b1d2Pd3iJ1Hp9yE6" target="_blank" rel="noopener noreferrer" className="hover:underline">35 Old Court House, Old Court Place, Kensington, London, W8 4PD, United Kingdom</a></li>
+              </ul>
             </li>
             <li className="flex items-center space-x-2">
-              <FaEnvelope className="text-amber-500" /> <span>email@example.com</span>
+              <a href="mailto:info@ecfatum.com" className="flex items-center gap-2 hover:underline"><FaEnvelope className="text-black text-xl" /> <span>info@ecfatum.com</span></a>
             </li>
             <li className="flex items-center space-x-2">
-              <FaPhone className="text-amber-500" /> <span>+123 456 7890</span>
+              <a href="tel:+233 54 7946562" className="flex items-center gap-2 hover:underline"><FaPhone className="text-black text-xl" /> <span>+233 54 7946562</span></a>
             </li>
           </ul>
               <ul className="flex mt-10 gap-5">
                           <li className=" flex flex-col items-center space-x-2 gap-2">
-                            <FaLinkedin className="text-amber-500 " />
+                            <FaLinkedin className="text-xl text-black transition-all duration-100 hover:text-2xl" />
                           </li>
                           <li className=" flex flex-col items-center space-x-2 gap-2">
-                            <FaFacebook className="text-amber-500 " />
+                            <FaFacebook className="text-xl text-black transition-all duration-100 hover:text-2xl" />
                           </li>
                           <li className=" flex flex-col items-center space-x-2 gap-2">
-                            <FaYoutube className="text-amber-500 " />
+                            <FaYoutube className="text-xl text-black transition-all duration-100 hover:text-2xl" />
                           </li>
                           <li className=" flex flex-col items-center space-x-2 gap-2">
-                            <FaXTwitter className="text-amber-400" />
+                            <FaXTwitter className="text-xl text-black transition-all duration-100 hover:text-2xl" />
                           </li>
                           <li className="flex flex-col items-center space-x-2 gap-2">
-                            <FaInstagram className="text-amber-500" />
+                            <FaInstagram className="text-xl text-black transition-all duration-100 hover:text-2xl" />
                           </li>
-                        </ul>
+                          <li className="flex flex-col items-center space-x-2 gap-2">
+                            <FaWhatsapp className="text-xl text-black transition-all duration-100 hover:text-2xl" />
+                          </li>
+                          <li className="flex flex-col items-center space-x-2 gap-2">
+                            <FaTiktok className="text-xl text-black transition-all duration-100 hover:text-2xl" />
+                          </li>
+              </ul>
         </div>
       </div>
 
-      <div className="mt-8 py-8 flex items-center justify-center border-t border-neutral-700 text-center text-sm font-light">
+      <div className="w-[90%] mx-auto mt-8 py-8 flex items-center justify-center border-t border-black text-center">
         © {new Date().getFullYear()} Ecfatum Ltd. All Rights Reserved.
       </div>
     </footer>

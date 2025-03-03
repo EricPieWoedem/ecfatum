@@ -1,34 +1,35 @@
-import React, { Suspense } from 'react'
-import { Navbar } from './components/Navbar'
-import { HeroSection } from './components/HeroSection' 
-import { Routes, Route, useLocation } from "react-router-dom"
-import ServicesSection from './Components/Services/Services'
-import About from './Components/About/About'
-import { Contact } from "./components/Contact"
-import TopLoadingBar from "./components/TopLoadingBar"
-import Footer from './components/footer'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/Navbar";
+import { HeroSection } from "./components/HeroSection";
+import ServicesSection from "./components/Services/Services";
+import About from "./components/About/About";
+import { Contact } from "./components/Contact";
+import TopLoadingBar from "./components/TopLoadingBar";
+import Footer from "./components/footer";
+import About_Page from "./components/About_Page";
 
-const App = () => {
-  const location = useLocation();
-
+const Home = () => {
   return (
     <>
-      <TopLoadingBar /> {/* Shows loading bar on route change */}
-      <Navbar />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<HeroSection />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Suspense>
+      <HeroSection />
+      <About />
+      <ServicesSection />
+    </>
+  );
+};
 
-      {location.pathname !== "/contact" && (
-        <>
-          <About />
-          <ServicesSection />
-        </>
-      )}
-      <Footer/>
+const App = () => {
+  return (
+    <>
+      <TopLoadingBar />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about_page" element={<About_Page/>} />
+      </Routes>
+      <Footer />
     </>
   );
 };

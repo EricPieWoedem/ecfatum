@@ -5,6 +5,8 @@ import video2 from "../assets/video2.mp4";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import { Link } from 'react-router-dom';
+
 
 export const HeroSection = () => {
   const particlesInit = useCallback(async (engine) => {
@@ -21,7 +23,7 @@ export const HeroSection = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   return (
-    <div className="relative flex flex-col items-center pt-9 lg:pt-20 overflow-hidden">
+    <div  id="home" className="relative flex flex-col items-center pt-9 lg:pt-20 overflow-hidden">
 
 <Particles
   id="tsparticles"
@@ -29,9 +31,9 @@ export const HeroSection = () => {
   options={{
     fullScreen: { enable: false },
     particles: {
-      number: { value: 40, density: { enable: true, area: 800 } },
+      number: { value: 50, density: { enable: true, area: 800 } },
       color: { value: "#800000" },
-      shape: { type: "circle" }, 
+      shape: { type: "triangle" }, 
       opacity: { value: 0.4 },
       size: { value: 3 },
       move: {
@@ -45,7 +47,7 @@ export const HeroSection = () => {
       line_linked: {
         enable: true,
         distance: 150, 
-        color: "#ebc000",
+        color: "#f59e0b",
         opacity: 0.2,
         width: 1, 
       },
@@ -73,14 +75,11 @@ export const HeroSection = () => {
     },
     detectRetina: true, 
   }}
-  className="gradient-background absolute inset-0 w-full h-full -z-10 bg-gradient-to-r from-black via-[#0D0D0D] to-[#1A1A1A]  min-h-screen"
+  className="gradient-background absolute inset-0 w-full h-full -z-10 bg-gradient-to-r from-black via-[#0D0D0D] to-[#141414]  min-h-screen"
 />
 
-
-
-
-      <motion.h1
-        className="font-semibold text-3xl sm:text-6xl lg:text-7xl text-center  w-3xl"
+<motion.h1
+        className="font-bold text-3xl sm:text-6xl lg:text-7xl text-center w-3xl"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -92,24 +91,21 @@ export const HeroSection = () => {
         for Smart Problems
       </motion.h1>
 
-      <motion.p className="mt-10 text-center text-neutral-300 w-3xl"
+      <motion.p className="mt-10 text-center text-neutral-300 w-3xl text-xl"
        initial={{ opacity: 0, y: 50 }}
        animate={{ opacity: 1, y: 0 }}
        transition={{ duration: 1.5 }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nisi
-        accusantium dolorum provident corporis quae delectus tempore animi nemo,
+        Empowering Africa and Beyond with Smart, Sustainable Solutions for a Brighter Future.
       </motion.p>
 
       <motion.div className="flex justify-center my-9"
              initial={{ opacity: 0, y: 50 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 2 }}>
-        <a
-          href=""
-          className="bg-gradient-to-r from-yellow-600 to-red-600 py-3 px-7 mx-3 rounded-md hover:scale-105 transition-transform duration-100"
+        <Link to="/about_page" className="bg-gradient-to-r from-yellow-600 to-red-600 py-3 px-7 mx-3 rounded-md hover:scale-105 transition-transform duration-100"
         >
           Learn More
-        </a>
+          </Link>
       </motion.div>
 
       <div className="flex mt-8 justify-center gap-5">
@@ -128,7 +124,7 @@ export const HeroSection = () => {
           autoPlay
           loop
           muted
-          className="rounded-lg  w-full max-w-md mx-2 my-4"
+          className="rounded-3xl  w-full max-w-md mx-2 my-4"
           style={{ scale }}
         >
           <source src={video2} type="video/mp4" />

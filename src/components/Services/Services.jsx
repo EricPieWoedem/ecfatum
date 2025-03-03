@@ -191,7 +191,7 @@ const Services = () => {
   const closeModal = () => setModalIsOpen(false);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-center items-center text-white overflow-hidden">
+    <section id="services" className="relative w-full min-h-screen flex flex-col justify-center items-center text-white overflow-hidden">
       <video
         autoPlay
         loop
@@ -200,8 +200,9 @@ const Services = () => {
         src="/video1.mp4"
       />
 
-      <h1 className="service-title text-4xl font-bold my-15">Our Services</h1>
-      <div className="services flex flex-wrap justify-center gap-6 px-4 w-full max-w-7xl mb-15">
+      <h1 className="text-5xl font-bold mt-15">Our Services</h1>
+      <p className="text-2xl w-[50%] text-center mt-3">Explore our cutting-edge solutions tailored to your needs, designed for efficiency and innovation.</p>
+      <div className="services flex flex-wrap justify-center gap-6 px-4 w-full max-w-7xl my-15">
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -212,10 +213,10 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
         
           >
-            <i>{service.icon}</i>
-            <div className="title">{service.title}</div>
-            <div className="detail">{service.detail}</div>
-            <button onClick={() => openModal(service)}>Learn More</button>
+            <i className="mx-auto text-amber-500 text-4xl">{service.icon}</i>
+            <div className="title text-xl bg-gradient-to-r from-yellow-500 to-red-500 text-transparent bg-clip-text">{service.title}</div>
+            <div className="detail text-neutral-300">{service.detail}</div>
+            <button onClick={() => openModal(service)} className="cursor-pointer bg-neutral-800 w-fit mx-auto px-4 py-2 rounded-md text-amber-500 transition-all duration-100 hover hover:text-amber-600">Learn More</button>
           </motion.div>
         ))}
       </div>
@@ -227,10 +228,10 @@ const Services = () => {
           className="modal-content"
           overlayClassName="modal-overlay"
         >
-           <h2 className="modal-title">{selectedService.title}</h2>
+           <h2 className="modal-title bg-gradient-to-r from-yellow-500 to-red-500 text-transparent bg-clip-text w-fit mx-auto font-semibold">{selectedService.title}</h2>
           <div className="modal-container">
             <div className="modal-info">
-              <h3 className="modal-info-title">{selectedService.LearnMoreTitle}</h3>
+              <h3 className="modal-info-title text-2xl text-amber-500">{selectedService.LearnMoreTitle}</h3>
               <ul className="modal-detail">           
                 {selectedService.moreInfo.map((point, i) => (
                 <p key={i}>{point}</p>
@@ -248,29 +249,29 @@ const Services = () => {
             <div className="gallery-show">
                 <div className="gallery bg-cover bg-center rounded-2xl p-4" style={{ backgroundImage: `url(${selectedService.image1})` }}>
                    <div className="gallery-image"></div>
-                    <div className="gallery_content">
+                    {/* <div className="gallery_content">
                         <div className="gallery_title">{selectedService.LearnMoreTitle}</div>
                         <div className="gallery_description">
                            {selectedService.galleryInfo1}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="gallery  bg-cover bg-center rounded-2xl p-4 " style={{ backgroundImage: `url(${selectedService.image2})`,backgroundColor: 'rgba(0, 0, 0, 0.9)' }}>
                     <div className="gallery-image"></div>
-                    <div className="gallery_content">
+                    {/* <div className="gallery_content">
                         <div className="gallery_title">{selectedService.LearnMoreTitle}</div>
                         <div className="gallery_description">
                             {selectedService.galleryInfo2}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
              </div>
              <div className="importance-benefit-display">
-                <div className="importance-benefit-title">{selectedService.title}</div>
+                <div className="importance-benefit-title text-amber-500">{selectedService.title}</div>
                 <div className="importance-benefit">
                     <div className="importance">
                         <ul className="list-disc list-inside space-y-1">
-                            <h2>Importance</h2>
+                            <h2 className="text-amber-500">Importance</h2>
                             {selectedService.importance.map((point, i) => (
                             <li key={i}>{point}</li>
                             ))}
@@ -278,7 +279,7 @@ const Services = () => {
                     </div>
                     <div className="benefit">
                     <ul className="list-disc list-inside space-y-1">
-                            <h2>Benefit</h2>
+                            <h2 className="text-amber-500">Benefit</h2>
                             {selectedService.benefit.map((point, i) => (
                             <li key={i}>{point}</li>
                             ))}

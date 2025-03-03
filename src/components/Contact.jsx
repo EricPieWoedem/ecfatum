@@ -1,179 +1,42 @@
-// import { useNavigate } from "react-router-dom";
-// import { useState, useEffect } from "react";
-// import user1 from "../assets/profile-pictures/user1.jpg";
-// import user2 from "../assets/profile-pictures/user2.jpg";
-// import user3 from "../assets/profile-pictures/user3.jpg";
-// import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaYoutube, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-// import { FaXTwitter } from "react-icons/fa6";
-// // import { div } from "framer-motion/client";
-
-// export const Contact = () => {
-//   const navigate = useNavigate();
-//   const [currentSlide, setCurrentSlide] = useState(0);
-
-//   // Slideshow images
-//   const images = [
-//   user1,
-//   user2,
-//   user3,
-//   ];
-
-//   // Auto-slide every 3 seconds
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrentSlide((prev) => (prev + 1) % images.length);
-//     }, 3000);
-//     return () => clearInterval(interval);
-//   }, [images.length]);
-
-//   return (
-//   <div className="animated-bg">
-//     <div className="flex justify-center">
-          
-//     <button
-//       onClick={() => navigate(-1)}
-//       className="absolute top-30 left-10 bg-gray-800 text-white px-4 py-2 rounded-md"
-//     >
-//       ← Back
-//     </button>
-
-//     {/* Left Side - Slideshow */}
-//     {/* <div className="w-2/5 h-full relative flex flex-col justify-around">
-//       <img
-//         src={images[currentSlide]}
-//         alt="Contact Slide"
-//         className="w-full h-1/2 mt-6 rounded-3xl object-cover transition-opacity duration-500"
-//       />
-//   <div className="flex flex-col justify-center items-center">
-//     <h1 className="text-xl text-center font-medium mb-5">Visit us on social media</h1>
-//     <ul className="flex w-full">
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaLinkedin className="text-yellow-400 w-7 h-7" />
-//                 </li>
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaFacebook className="text-yellow-400 w-7 h-7" />
-//                 </li>
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaYoutube className="text-yellow-400 w-7 h-7" />
-//                 </li>
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaXTwitter className="text-yellow-400 w-7 h-7" />
-//                 </li>
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaInstagram className="text-yellow-400 w-7 h-7" />
-//                 </li>
-//               </ul>
-//               </div>
-//     </div> */}
-
-//     {/* Right Side - Contact Form */}
-//     <div className="flex flex-col justify-center items-center ">
-//     <div className="mb-5">
-//     <h1 className="text-3xl font-semibold text-center my-10">Get In Touch With Us</h1>
-//     <ul className="space-y-2 flex gap-1">
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                 <FaMapMarkerAlt className="text-amber-500 w-7 h-7" />
-//                 <span className="text-center">123 Street, City, Country</span>
-//                 </li>
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaEnvelope className="text-amber-500 w-7 h-7" /> <span className="text-center">email@example.com</span>
-//                 </li>
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaPhone className="text-amber-500 w-7 h-7" /> <span className="text-center">+123 456 7890</span>
-//                 </li>
-//               </ul>
-              
-//     </div>
-//       {/* <h1 className="text-2xl font-medium mb-6">Get in Touch With Us</h1> */}
-//       <form className="w-4/5">
-//       <h3 className="my-5">Send us a message</h3>
-//         <input
-//           type="text"
-//           placeholder="Your Name"
-//           className="w-full p-3 border-0 bg-neutral-700 mb-4"
-//         />
-//         <input
-//           type="email"
-//           placeholder="Your Email"
-//           className="w-full p-3 border-0 bg-neutral-700 mb-4"
-//         />
-//         <textarea
-//           placeholder="Your Message"
-//           className="w-full p-3 border-0 bg-neutral-700 mb-4"
-//           rows="4"
-//         />
-//         <button className="w-full bg-gradient-to-r from-yellow-500 to-red-500 text-white p-3 rounded-md">
-//           Send Message
-//         </button>
-//       </form>
-//       <div className="flex flex-col justify-center items-center my-10  w-full">
-//     <h1 className="text-center font-light mb-5">Visit us on social media</h1>
-//     <ul className="flex w-1/2">
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaLinkedin className="text-amber-500 w-6  h-6" />
-//                 </li>
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaFacebook className="text-amber-500 w-6  h-6" />
-//                 </li>
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaYoutube className="text-amber-500 w-6  h-6" />
-//                 </li>
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaXTwitter className="text-amber-400 w-6  h-6" />
-//                 </li>
-//                 <li className="flex-1/3 flex flex-col items-center space-x-2 gap-2">
-//                   <FaInstagram className="text-amber-500 w-6  h-6" />
-//                 </li>
-//               </ul>
-//     </div>
-//     </div>
-    
-//   </div></div>
-//   );
-// };
-
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion"; // Import Framer Motion
-import user1 from "../assets/profile-pictures/user1.jpg";
-import user2 from "../assets/profile-pictures/user2.jpg";
-import user3 from "../assets/profile-pictures/user3.jpg";
+import { useState } from "react";
+import { motion } from "framer-motion"; 
 import { 
   FaMapMarkerAlt, FaEnvelope, FaPhone, 
-  FaYoutube, FaFacebook, FaInstagram, FaLinkedin 
+  FaYoutube, FaFacebook, FaInstagram, FaLinkedin, 
+  FaWhatsapp,
+  FaTiktok
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 export const Contact = () => {
   const navigate = useNavigate();
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const images = [user1, user2, user3];
-
-  // Auto-slide every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+  const [selected, setSelected] = useState("");
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }} // Start invisible & slightly below
-      animate={{ opacity: 1, y: 0 }}  // Fade in & slide up
-      exit={{ opacity: 0, y: 30 }}    // Fade out & slide down when leaving
-      transition={{ duration: 0.6, ease: "easeOut" }} // Smooth transition
+      initial={{ opacity: 0, y: 30 }} 
+      animate={{ opacity: 1, y: 0 }}  
+      exit={{ opacity: 0, y: 30 }}  
+      transition={{ duration: 0.6, ease: "easeOut" }} 
       className="animated-bg"
     >
-      <div className="flex justify-center">
+      <div className="relative w-full min-h-screen  flex justify-center overflow-hidden">
+
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute w-full h-full object-cover -z-10"
+        src="/contactvideo.mp4"
+      />
         
         {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
-          className="absolute top-30 left-10 bg-gray-800 text-white px-4 py-2 rounded-md"
+          className="absolute top-10 left-10 bg-neutral-800 text-amber-500 px-4 py-2 rounded-md cursor-pointer transtion-all duration-100 hover:bg-neutral-900 hover:text-amber-600"
         >
-          ← Back
+          Back
         </button>
 
         {/* Contact Form Section */}
@@ -182,25 +45,27 @@ export const Contact = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-            className="mb-5"
+            className="mb-5 w-[90%]"
           >
-            <h1 className="text-3xl font-semibold text-center my-10">
+            <h1 className="text-4xl font-bold text-center my-15 w-fit mx-auto">
               Get In Touch With Us
             </h1>
-            <ul className="space-y-2 flex gap-5">
-              <li className="flex flex-col items-center gap-2 text-sm font-light">
-                <FaMapMarkerAlt className="text-amber-500 w-7 h-7" />
-                <span className="text-center">123 Street, City, Country</span>
-              </li>
-              <li className="flex flex-col items-center gap-2">
-                <FaEnvelope className="text-amber-500 w-7 h-7" />
-                <span className="text-center">email@example.com</span>
-              </li>
-              <li className="flex flex-col items-center gap-2">
-                <FaPhone className="text-amber-500 w-7 h-7" />
-                <span className="text-center">+123 456 7890</span>
-              </li>
-            </ul>
+            <ul className="space-y-2 flex justify-evenly">
+                        <li className=" flex-1 flex items-center space-x-2 h-fit">
+                       <div className="w-full flex flex-col items-center gap-2"><FaMapMarkerAlt className="text-amber-500 text-4xl" /> <span className="text-neutral-300">
+                        <ul className="flex flex-col text-center gap-2 text-sm">
+                       <a href="https://maps.app.goo.gl/zWKRzBJcxdy5KBk49" target="_blank" rel="noopener noreferrer" className="hover:underline"><li>6-7 Saxel Street, Tesano, Accra, Ghana</li></a>
+                       <a href="https://maps.app.goo.gl/3b1d2Pd3iJ1Hp9yE6" target="_blank" rel="noopener noreferrer" className="hover:underline"><li>35 Old Court House, Old Court Place, Kensington, London, W8 4PD, United Kingdom</li></a>
+                       </ul></span>
+                       </div>
+                        </li>
+                        <li className="flex-1 flex items-center space-x-2 h-fit">
+                          <a href="mailto:info@ecfatum.com" className="w-full flex flex-col items-center gap-2 hover:underline"><FaEnvelope className="text-amber-500 text-4xl" /> <span className="text-neutral-300">info@ecfatum.com</span></a>
+                        </li>
+                        <li className="flex-1 flex items-center space-x-2 h-fit">
+                          <a href="tel:+233 54 7946562" className="w-full flex flex-col items-center gap-2 hover:underline"><FaPhone className="text-amber-500 text-4xl" /> <span className="text-neutral-300">+233 54 7946562</span></a>
+                        </li>
+                      </ul>
           </motion.div>
 
           {/* Contact Form */}
@@ -210,44 +75,64 @@ export const Contact = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="w-4/5"
           >
-            <h3 className="my-5">Send us a message</h3>
-            <input type="text" placeholder="Your Name" className="w-full p-3 bg-neutral-700 mb-4" />
-            <input type="email" placeholder="Your Email" className="w-full p-3 bg-neutral-700 mb-4" />
-            <textarea placeholder="Your Message" className="w-full p-3 bg-neutral-700 mb-4" rows="4" />
-            <button className="w-full bg-gradient-to-r from-yellow-500 to-red-500 text-white p-3 rounded-md">
+            <h3 className="my-5 text-neutral-300 text-center text-xl">Send us a message</h3>
+            <input type="text" placeholder="Your Name" className="w-full p-3 text-neutral-100 bg-neutral-700 mb-4 focus:outline-none focus:ring-2 focus:ring-neutral-500 placeholder:text-neutral-400" />
+            <input type="email" placeholder="Your Email" className="w-full p-3 text-neutral-100 bg-neutral-700 mb-4 focus:outline-none focus:ring-2 focus:ring-neutral-500 placeholder:text-neutral-400" />
+           <div className="relative w-full">
+           <select className={`w-full p-3 pl-2 bg-neutral-700 mb-4 focus:outline-none focus:ring-2 focus:ring-neutral-500
+                ${selected ? "text-neutral-100" : "text-neutral-400"}`}
+                onChange={(e) => setSelected(e.target.value)}>
+                  <option value="" disabled selected className="text-neutral-400">Select a service you'd like us to offer</option>
+                  <option value="system-design" className="text-neutral-100">System Design</option>
+                  <option value="app-development" className="text-neutral-100">Application Development</option>
+                  <option value="business-analysis" className="text-neutral-100">Business Analysis</option>
+                  <option value="system-security" className="text-neutral-100">System Security</option>
+                  <option value="it-training" className="text-neutral-100">IT Training & Support</option>
+                  <option value="data-management" className="text-neutral-100">Data Management</option>
+                  <option value="enquiry" className="text-neutral-100">Making an Enquiry</option>
+              </select> 
+           </div>
+            <textarea placeholder="Your Message" className="w-full p-3 text-neutral-100 bg-neutral-700 mb-4 focus:outline-none focus:ring-2 focus:ring-neutral-500 placeholder:text-neutral-400" rows="4" />
+            <button className="w-full bg-gradient-to-r from-yellow-500 to-red-500 text-white p-3 rounded-md cursor-pointer transition-all duration-300 hover:from-yellow-600 hover:to-red-600">
               Send Message
             </button>
           </motion.form>
 
-          {/* Social Media Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col justify-center items-center my-10 w-full"
           >
-            <h1 className="text-center font-light mb-5">Visit us on social media</h1>
-            <ul className="flex w-1/2 justify-around">
-              <li className="flex flex-col items-center gap-2">
-                <FaLinkedin className="text-amber-500 w-6 h-6" />
-              </li>
-              <li className="flex flex-col items-center gap-2">
-                <FaFacebook className="text-amber-500 w-6 h-6" />
-              </li>
-              <li className="flex flex-col items-center gap-2">
-                <FaYoutube className="text-amber-500 w-6 h-6" />
-              </li>
-              <li className="flex flex-col items-center gap-2">
-                <FaXTwitter className="text-amber-400 w-6 h-6" />
-              </li>
-              <li className="flex flex-col items-center gap-2">
-                <FaInstagram className="text-amber-500 w-6 h-6" />
-              </li>
-            </ul>
+            <h1 className="text-center text-xl my-5">Visit us on social media</h1>
+                <ul className="flex mt-2 gap-5">
+                  <li className=" flex flex-col items-center space-x-2 gap-2">
+                                        <FaLinkedin className="text-3xl text-amber-500 transition-all duration-100 hover:text-4xl" />
+                                      </li>
+                                      <li className=" flex flex-col items-center space-x-2 gap-2">
+                                        <FaFacebook className="text-3xl text-amber-500 transition-all duration-100 hover:text-4xl" />
+                                      </li>
+                                      <li className=" flex flex-col items-center space-x-2 gap-2">
+                                        <FaYoutube className="text-3xl text-amber-500 transition-all duration-100 hover:text-4xl" />
+                                      </li>
+                                      <li className=" flex flex-col items-center space-x-2 gap-2">
+                                        <FaXTwitter className="text-3xl text-amber-500 transition-all duration-100 hover:text-4xl" />
+                                      </li>
+                                      <li className="flex flex-col items-center space-x-2 gap-2">
+                                        <FaInstagram className="text-3xl text-amber-500 transition-all duration-100 hover:text-4xl" />
+                                      </li>
+                                      <li className="flex flex-col items-center space-x-2 gap-2">
+                                        <FaWhatsapp className="text-3xl text-amber-500 transition-all duration-100 hover:text-4xl" />
+                                      </li>
+                                      <li className="flex flex-col items-center space-x-2 gap-2">
+                                        <FaTiktok className="text-3xl text-amber-500 transition-all duration-100 hover:text-4xl" />
+                                      </li>
+                          </ul>
           </motion.div>
         </div>
       </div>
     </motion.div>
   );
 };
+
 
