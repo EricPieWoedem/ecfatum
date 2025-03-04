@@ -8,9 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 
 const stats = [
-  { number: '15', title: 'Awards Won' },
-  { number: '10+', title: 'Projects Completed' },
-  { number: '11', title: 'Years of Experience' }
+  { number: '11', title: 'Years of Experience' },
+  { number: '15', title: 'Awards Won' }
 ];
 
 const images = [
@@ -23,6 +22,9 @@ const About_Page = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const navigate = useNavigate();
 
+    useEffect(() => {
+      window.scrollTo(0, 0); 
+    }, []);
 
     useEffect(() => {
       const interval = setInterval(() => {
@@ -45,13 +47,13 @@ const About_Page = () => {
                 initial={{ opacity: 0, y: 50 }} 
                 whileInView={{ opacity: 1, y: 0 }} 
                 viewport={{ once: false, amount: 0.3 }} 
-                transition={{ duration: 1, ease: "easeInOut" }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
             >
                 <motion.h1
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }} 
                     viewport={{ once: false, amount: 0.3 }} 
-                    transition={{ duration: 1, delay: 0.3 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
                     className='text-7xl font-bold'
                 >
                     About Our Company
@@ -61,7 +63,7 @@ const About_Page = () => {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1, y: 0 }} 
                     viewport={{ once: false, amount: 0.3 }} 
-                    transition={{ duration: 1, delay: 0.6 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
                     className='about-slogan text-center text-3xl font-medium mt-5'
                 >
                     Smart solutions for smart problems.
@@ -76,7 +78,7 @@ const About_Page = () => {
         className="about-left"
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: false }}
       >
         <video 
@@ -93,7 +95,7 @@ const About_Page = () => {
           className='stats-card'
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
           viewport={{ once: false }}
         >
           {stats.map((stat, index) => (
@@ -135,7 +137,7 @@ const About_Page = () => {
         <motion.h2 
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
           viewport={{ once: false }}
           className='text-4xl my-6 bg-gradient-to-br from-yellow-500 to-red-700 text-transparent bg-clip-text'
         >
@@ -145,9 +147,9 @@ const About_Page = () => {
         <motion.p 
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           viewport={{ once: false }}
-          className='text-xl font-extralight'
+          className='text-lg text-neutral-300'
         >
           Ecfatum Limited is a Ghanaian-owned Company incorporated under the Companies Code 1963 (ACT 179) as a Limited Liability company. Ecfatum is a Technology Consultancy company poised to redefine Information Technology in Ghana other countries in the ECOWAS sub-region and subsequently to other African countries. It was established in response to the need for an alternative approach to resolving the complexities and obstacles presented by the ever-increasing disparate types of hardware, data, records, documents, applications, and systems.
         </motion.p>
@@ -155,9 +157,9 @@ const About_Page = () => {
         <motion.p 
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           viewport={{ once: false }}
-          className='text-xl font-extralight'
+          className='text-lg text-neutral-300'
         >
           
          At Ecfatum, we pride ourselves of a team of Ghanaian IT Professionals who bring a rich blend of local insights and international experience. This unique combination enables us to tailor solutions that are culturally relevant and globally competitive.
@@ -172,14 +174,14 @@ const About_Page = () => {
     initial={{ opacity: 0, y: 50 }} 
     whileInView={{ opacity: 1, y: 0 }} 
     viewport={{ once: false, amount: 0.3 }} 
-    transition={{ duration: 1, ease: "easeInOut" }}
+    transition={{ duration: 0.5, ease: "easeInOut" }}
 
     >
         <motion.div 
         className="profile"
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: false }}
       
         >
@@ -199,7 +201,7 @@ const About_Page = () => {
                 <motion.h3
                  initial={{ opacity: 0, y: -30 }}
                  whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                 transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                  viewport={{ once: false }}
                  className='text-2xl font-semibold w-fit bg-gradient-to-br from-yellow-500 to-red-700 text-transparent bg-clip-text'
                >
@@ -208,9 +210,9 @@ const About_Page = () => {
                 <motion.p
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                 viewport={{ once: false }}
-                className='text-xl font-extralight'
+                className='text-lg text-neutral-300'
                 >
                 To be the first-choice, predominant, and most reliable tech solutions provider in Africa
                 </motion.p>
@@ -219,7 +221,7 @@ const About_Page = () => {
                 <motion.h3
                 initial={{ opacity: 0, y: -30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                 viewport={{ once: false }}    
                 className='text-2xl font-semibold w-fit bg-gradient-to-br from-yellow-500 to-red-700 text-transparent bg-clip-text'  
                 >Our Mission
@@ -227,9 +229,9 @@ const About_Page = () => {
                 <motion.p
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                 viewport={{ once: false }}
-                className='text-xl font-extralight'
+                className='text-lg text-neutral-300'
                 >
                 We exist to build smart solutions for smart problems
                 </motion.p>
@@ -238,7 +240,7 @@ const About_Page = () => {
                 <motion.h3
                  initial={{ opacity: 0, y: -30 }}
                  whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+                 transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                  viewport={{ once: false }}   
                  className='text-2xl font-semibold w-fit bg-gradient-to-br from-yellow-500 to-red-700 text-transparent bg-clip-text'    
                  >
@@ -247,9 +249,9 @@ const About_Page = () => {
                 <motion.p
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                 viewport={{ once: false }}
-                className='text-xl font-extralight'
+                className='text-lg text-neutral-300'
                 >
                 The objective of Ecfatum is to develop, promote and leverage requisite IT expertise and resources for national and sub-regional capacity building. Our interest is the use of IT and best management practices to transform private and public institutions into effective, efficient, and productive entities that form the backbone of our economy.
                 </motion.p>
@@ -257,7 +259,6 @@ const About_Page = () => {
         </div>
     </motion.div>
 
-{/* ``  Ecfactum Experience  */}
       <motion.div
        className="experience-section"
        initial={{ opacity: 0, y: 50 }} 
@@ -270,7 +271,7 @@ const About_Page = () => {
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: false, amount: 0.3 }} 
             transition={{ duration: 1, delay: 0.3 }}
-            className='text-2xl font-semibold w-fit bg-gradient-to-br from-yellow-500 to-red-700 text-transparent bg-clip-text'
+            className='text-3xl mb-3 font-semibold w-fit bg-gradient-to-br from-yellow-500 to-red-700 text-transparent bg-clip-text'
         >
             Our Experience
         </motion.h1>
@@ -279,7 +280,7 @@ const About_Page = () => {
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: false, amount: 0.3 }} 
             transition={{ duration: 1, delay: 0.6 }}
-            className='summary text-xl font-extralight'
+            className='summary text-lg text-neutral-300 text-left'
         >
             Ecfatum Limited has been operating outside the country for about 10 years but was 
             incorporated in Ghana in 2015. Our consultants have been providing consulting 
@@ -289,8 +290,6 @@ const About_Page = () => {
             transparency, accountability, and effectiveness of government agencies and private 
             sector businesses. 
         </motion.p>
-
-        {/* Experience content  */}
 
         <div className="experience-container">
         <motion.div 
@@ -312,7 +311,7 @@ const About_Page = () => {
       ))}
     </div>
         </motion.div>
-        <div className="experience-content">
+        <div className="experience-content mb-10">
             <div className="experience">
                 <motion.h3
                  initial={{ opacity: 0, y: -30 }}
@@ -321,14 +320,14 @@ const About_Page = () => {
                  viewport={{ once: false }}
                  className='text-2xl font-semibold w-fit bg-gradient-to-br from-yellow-500 to-red-700 text-transparent bg-clip-text'
                >
-                    Experience
+                Experience
                 </motion.h3>
                 <motion.p
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
                 viewport={{ once: false }}
-                className='text-xl font-extralight'
+                className='text-lg text-neutral-300'
                 >
                 We have experienced personnel with local expertise and 
                 worldwide experience. Our staff consists of Ghanaians, some of whom have 
@@ -351,7 +350,7 @@ const About_Page = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
                 viewport={{ once: false }}
-                className='text-xl font-extralight'
+                className='text-lg text-neutral-300'
                 >
                 We maintain a formal quality program designed 
                 to ensure that we provide consistent quality service to our clients. The work 
@@ -374,7 +373,7 @@ const About_Page = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
                 viewport={{ once: false }}
-                className='text-xl font-extralight'
+                className='text-lg text-neutral-300'
                 >
                 I believe IT should align with an institution’s mission to enhance knowledge for teachers and students. To maximize its impact and return on investment, I prioritize continuous user training. Skills transfer is central to every solution I propose, with tailored programs for all organizational levels.
                 </motion.p>
@@ -384,7 +383,6 @@ const About_Page = () => {
           
 
       </motion.div>
-{/* end of Experience content  */}
 
     </>
   )

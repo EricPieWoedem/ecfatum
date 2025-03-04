@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import video1 from "../assets/video1.mp4";
 import video2 from "../assets/video2.mp4";
@@ -12,8 +12,11 @@ export const HeroSection = () => {
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine);
   }, []);
-  
 
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
+  
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -91,7 +94,7 @@ export const HeroSection = () => {
         for Smart Problems
       </motion.h1>
 
-      <motion.p className="mt-10 text-center text-neutral-300 w-3xl text-xl"
+      <motion.p className="mt-10 text-center text-neutral-300 w-3xl text-2xl"
        initial={{ opacity: 0, y: 50 }}
        animate={{ opacity: 1, y: 0 }}
        transition={{ duration: 1.5 }}>

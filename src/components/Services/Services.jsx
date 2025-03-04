@@ -208,7 +208,7 @@ const Services = () => {
             key={index}
             className="card max-w-xs w-full"
             initial={{ opacity: 0, y: 50 }}
-            transition={{ delay: index * 0.2, duration: 0.5 }}
+            transition={{ delay: index * 0.1, duration: 0.2 }}
             viewport={{ once: false }}
             whileInView={{ opacity: 1, y: 0 }}
         
@@ -249,21 +249,9 @@ const Services = () => {
             <div className="gallery-show">
                 <div className="gallery bg-cover bg-center rounded-2xl p-4" style={{ backgroundImage: `url(${selectedService.image1})` }}>
                    <div className="gallery-image"></div>
-                    {/* <div className="gallery_content">
-                        <div className="gallery_title">{selectedService.LearnMoreTitle}</div>
-                        <div className="gallery_description">
-                           {selectedService.galleryInfo1}
-                        </div>
-                    </div> */}
                 </div>
                 <div className="gallery  bg-cover bg-center rounded-2xl p-4 " style={{ backgroundImage: `url(${selectedService.image2})`,backgroundColor: 'rgba(0, 0, 0, 0.9)' }}>
                     <div className="gallery-image"></div>
-                    {/* <div className="gallery_content">
-                        <div className="gallery_title">{selectedService.LearnMoreTitle}</div>
-                        <div className="gallery_description">
-                            {selectedService.galleryInfo2}
-                        </div>
-                    </div> */}
                 </div>
              </div>
              <div className="importance-benefit-display">

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaYoutube, FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6"; 
-import A from '../assets/A.png'
+import logo from '../assets/logo.png'
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
 
         <div>
           <div className="flex items-center space-x-2">
-             <img className="h-18 w-55 bg-black border-none p-1" src={A} alt="ecfatum-logo" />
+             <img className="h-15 w-50 bg-black border-none p-1" src={logo} alt="ecfatum-logo" />
           </div>
           <p className="mt-4 w-[70%]">
           We provide cutting-edge solutions tailored to your needs, designed for efficiency and innovation.
@@ -23,7 +23,7 @@ const Footer = () => {
           <h3 className="font-semibold mb-3">Browse</h3>
           <ul className="space-y-2">
             <li><Link to="/" className=" hover:underline">Home</Link></li>
-            <li><Link to="/about" className=" hover:underline">About</Link></li>
+            <li><Link to="/about_page" className=" hover:underline">About</Link></li>
             <li><Link to="/services" className=" hover:underline">Services</Link></li>
             <li><Link to="/contact" className=" hover:underline">Contact</Link></li>
           </ul>
@@ -35,7 +35,7 @@ const Footer = () => {
           <ul className="space-y-2">
           <li><Link to="/services" className=" hover:underline">System Design</Link></li>
           <li><Link to="/services" className=" hover:underline">Application Development</Link></li>
-          <li><Link to="/services" className=" hover:underline">Business Analysis</Link></li>
+          <li><Link to="services" className=" hover:underline">Business Analysis</Link></li>
           <li><Link to="/services" className=" hover:underline">System Security</Link></li>
           <li><Link to="/services" className=" hover:underline">IT Training & Support</Link></li>
           <li><Link to="/services" className=" hover:underline">Data Management</Link></li>
@@ -62,25 +62,25 @@ const Footer = () => {
           </ul>
               <ul className="flex mt-10 gap-5">
                           <li className=" flex flex-col items-center space-x-2 gap-2">
-                            <FaLinkedin className="text-xl text-black transition-all duration-100 hover:text-2xl" />
+                            <a href="https://www.linkedin.com/company/ecfatum/" target="_blank" rel="noopener noreferrer"><FaLinkedin className="text-xl text-black transition-all duration-100 hover:text-2xl"/></a>
                           </li>
                           <li className=" flex flex-col items-center space-x-2 gap-2">
-                            <FaFacebook className="text-xl text-black transition-all duration-100 hover:text-2xl" />
+                            <a href="https://www.facebook.com/share/1KWRft5gUG/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><FaFacebook className="text-xl text-black transition-all duration-100 hover:text-2xl"/></a>
                           </li>
                           <li className=" flex flex-col items-center space-x-2 gap-2">
-                            <FaYoutube className="text-xl text-black transition-all duration-100 hover:text-2xl" />
+                            <a href="" target="_blank" rel="noopener noreferrer"><FaYoutube className="text-xl text-black transition-all duration-100 hover:text-2xl"/></a>
                           </li>
                           <li className=" flex flex-col items-center space-x-2 gap-2">
-                            <FaXTwitter className="text-xl text-black transition-all duration-100 hover:text-2xl" />
+                            <a href="" target="_blank" rel="noopener noreferrer"><FaXTwitter className="text-xl text-black transition-all duration-100 hover:text-2xl"/></a>
                           </li>
                           <li className="flex flex-col items-center space-x-2 gap-2">
-                            <FaInstagram className="text-xl text-black transition-all duration-100 hover:text-2xl" />
+                            <a href="https://www.instagram.com/ecfatum_ltd?igsh=YzFnN3FoNncxZTl2&utm_source=qr" target="_blank" rel="noopener noreferrer"><FaInstagram className="text-xl text-black transition-all duration-100 hover:text-2xl"/></a>
                           </li>
                           <li className="flex flex-col items-center space-x-2 gap-2">
-                            <FaWhatsapp className="text-xl text-black transition-all duration-100 hover:text-2xl" />
+                            <a href="" target="_blank" rel="noopener noreferrer"><FaWhatsapp className="text-xl text-black transition-all duration-100 hover:text-2xl"/></a>
                           </li>
                           <li className="flex flex-col items-center space-x-2 gap-2">
-                            <FaTiktok className="text-xl text-black transition-all duration-100 hover:text-2xl" />
+                            <a href="https://www.tiktok.com/@ecfatumlimited?_t=8otbT2grLLZ&_r=1" target="_blank" rel="noopener noreferrer"><FaTiktok className="text-xl text-black transition-all duration-100 hover:text-2xl"/></a>
                           </li>
               </ul>
         </div>

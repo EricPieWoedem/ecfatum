@@ -3,11 +3,10 @@ import './About.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import video from '../../assets/aboutvideo.mp4';
-import { useCallback } from "react";
+// import { useCallback } from "react";
 
 const stats = [
-  { number: '32', title: 'Years of Experience' },
-  { number: '50+', title: 'Projects Completed' },
+  { number: '32+', title: 'Years of Experience' },
   { number: '15', title: 'Awards Won' },
 ];
 
@@ -22,14 +21,14 @@ const About = () => {
        transition={{ duration: 0.2, delay: 0.2, ease: "easeOut" }}
        viewport={{ once: false }}
 
-    className='text-center font-bold text-5xl mt-10 bg-gradient-to-r from-yellow-500 to-red-500 text-transparent bg-clip-text w-fit ' >About Us
+    className='text-center font-semibold text-5xl mt-10 w-fit ' >About Us
     </motion.h1>
       <div id='about' className='about'>
       <motion.div 
         className="about-left"
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: false }}
       >
         <video 
@@ -46,7 +45,7 @@ const About = () => {
           className='stats-card'
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
           viewport={{ once: false }}
         >
           {stats.map((stat, index) => (
@@ -64,7 +63,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
               viewport={{ once: false }}
-            className='text-xl text-neutral-300'
+            className='text-lg text-neutral-300'
               >{stat.title}
               </motion.p>
             </div>
@@ -99,7 +98,7 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           viewport={{ once: false }}
-          className='text-xl text-neutral-300'
+          className='text-lg text-neutral-300'
         >
           Ecfatum Limited is a Ghanaian-owned Company incorporated under the Companies 
           Code 1963 (ACT 179) as a Limited Liability company. Ecfatum is a Technology 
@@ -110,9 +109,9 @@ const About = () => {
         <motion.p 
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           viewport={{ once: false }}
-          className='text-xl text-neutral-300'
+          className='text-lg text-neutral-300'
         >
           We are at the forefront of technological innovation, offering solutions that 
           are not just effective but also future-proof.
@@ -121,11 +120,11 @@ const About = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
           viewport={{ once: false }}
         >
           <Link to="/about_page">
-            <button className='btn text-amber-500 text-xl font-medium cursor-pointer'>Learn more</button>
+            <button className='btn text-amber-500 text-lg font-medium cursor-pointer transition-all duration-100 ease-in-out hover:text-amber-700'>Learn more</button>
           </Link>
         </motion.div>
       </div>

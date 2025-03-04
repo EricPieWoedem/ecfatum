@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import A from '../assets/A.png';
+import logo from '../assets/logo.png';
 import { Menu, X } from 'lucide-react';
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
@@ -23,11 +23,11 @@ export const Navbar = () => {
             <div className="container px-4 mx-auto relative text-sm">
                 <div className="flex justify-between items-center">
                     <Link to="/" className="flex items-center justify-center gap-0.5 flex-shrink-0">
-                        <img className="h-12 w-45" src={A} alt="ecfatum-logo" />
+                        <img className="h-12 w-45" src={logo} alt="ecfatum-logo" />
                     </Link>
 
                     {/* Desktop Navbar */}
-                    <ul className="hidden lg:flex ml-14 space-x-12 text-xl">
+                    <ul className="hidden lg:flex ml-14 space-x-12 text-base">
                         {navItems.map((item, index) => (
                             <li key={index}>
                                 <ScrollLink
@@ -35,7 +35,7 @@ export const Navbar = () => {
                                     smooth={true}
                                     duration={50}
                                     offset={-70}
-                                    className="cursor-pointer transition-all duration-100 ease-in-out hover:bg-gradient-to-r from-yellow-500 to-red-500 hover:text-transparent hover:bg-clip-text hover:font-semibold"
+                                    className="text-lg cursor-pointer transition-all duration-100 ease-in-out hover:bg-gradient-to-r from-yellow-500 to-red-500 hover:text-transparent hover:bg-clip-text hover:font-semibold"
                                 >
                                     {item.label}
                                 </ScrollLink>

@@ -53,8 +53,8 @@
 
 .stat-box:hover{
     transform: scale(1.05);
-    /* box-shadow: 0 0 4px var(--color); */
 }
+
 .stat-box h2, .stat-box p{
     padding:0 10px ;
     margin: 0;
@@ -68,13 +68,7 @@
     margin-bottom: 15px;
 }
 
-.about p strong{
-    color: var(--color);
-}
-
-
-
-  .mission-vission{
+.mission-vission{
     margin: 100px auto;
     display: flex;
     align-items: center;
@@ -118,21 +112,13 @@
     transform: translateX(0);
   }
   
-  /* Experience section styling  */
   .experience-section{
     margin: 100px auto;
     width: 90%;   
   }
-  .experience-section h1{
+
+  .experience-section {
     text-align: center;
-    color: var(--color);
-    font-size: 35px;
-    margin-bottom: 30px;
-  }
-  .experience-section .summary{
-    text-align: center;
-    padding-left: 20px;
-    color: var(--Secondary);
     margin-bottom: 30px;
   }
   .experience-container{
@@ -152,8 +138,6 @@
   .experience h3,
   .commitment h3,
   .training h3{
-    color: var(--color);
-    font-size: 35px;
     margin-top: 2rem;
   
   }
@@ -188,7 +172,6 @@
       flex-basis: 100%;
 
   }
-
  
   .about-right, .experience-content {
       flex-basis: 100%;

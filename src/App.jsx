@@ -8,6 +8,8 @@ import { Contact } from "./components/Contact";
 import TopLoadingBar from "./components/TopLoadingBar";
 import Footer from "./components/footer";
 import About_Page from "./components/About_Page";
+import {Partners} from "./components/Partners";
+import { Projects } from "./components/projects"; 
 
 const Home = () => {
   return (
@@ -15,6 +17,8 @@ const Home = () => {
       <HeroSection />
       <About />
       <ServicesSection />
+      <Partners/>
+      <Projects/>
     </>
   );
 };
