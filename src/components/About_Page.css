@@ -1,0 +1,220 @@
+.about-hero {
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("../assets/about1.jpg") center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+ .about {
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.about-left {
+    flex-basis: 40%;
+    position: relative;   
+}
+
+.about-right {
+    flex-basis: 56%;
+}
+
+.about-video {
+    width: 100%;
+    border-radius: 12px;
+    max-width: 500px;
+    box-shadow: 0 0 14px var(--color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.stats-card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 12px;
+    gap: 20px;
+}
+.stat-box{
+    flex: 1 1 120px;
+    border-radius:12px ;
+    min-height:120px;
+    transition: transform 0.3s ease;
+    padding: 1em;
+}
+
+.stat-box:hover{
+    transform: scale(1.05);
+}
+
+.stat-box h2, .stat-box p{
+    padding:0 10px ;
+    margin: 0;
+}
+
+.about h2 {
+    max-width: 400px;
+}
+
+.about p {
+    margin-bottom: 15px;
+}
+
+.mission-vission{
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+  }
+  .profile{
+    flex-basis: 40% ;
+  }
+  .profile-content{
+    flex-basis: 56%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    order: -1;
+  }
+
+ .slideshow {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .slide-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .slide-image.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .experience-section{
+    margin: 100px auto;
+    width: 90%;   
+  }
+
+  .experience-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .experience-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .experience-slides{
+    flex-basis: 40% ;
+    padding-right: 2.5rem;
+  }
+  .experience-content{
+    flex-basis: 56%;
+    color: white;
+  }
+  .experience h3,
+  .commitment h3,
+  .training h3{
+    margin-top: 2rem;
+  
+  }
+  .experience p,
+  .commitment p,
+  .training p{
+    color: var(--Secondary);
+    text-align: left;
+  }
+
+  /* Responsive */
+@media (max-width: 800px) {
+  .hero-content h1{
+    font-size: 40px;
+  }
+  .hero-content p{
+    font-size: 1rem;
+  }
+   
+  .about h2{
+    font-size: 25px;
+  }
+  .about p{
+    font-size: 13px;
+  }
+  
+  .about,.experience-section {
+      flex-direction: column;
+      padding: 0;
+  }
+  .about-left,.experience-slides {
+      flex-basis: 100%;
+
+  }
+ 
+  .about-right, .experience-content {
+      flex-basis: 100%;
+  }
+  .about-right {
+      order: -1; /* Move the right section to the top */
+    }
+    .mission-vission{
+      display: block;
+      
+    }
+    .profile{
+      flex-basis: 100%;
+      margin-bottom: 4rem;
+    }
+    .profile-content{
+      flex-basis: 100%;
+      gap: 1.5rem;
+    }
+    .profile-content .vission h3,
+    .profile-content .mission h3,
+    .profile-content .objective h3{
+      font-size: 25px;
+    }
+    .profile-content .vission p,
+    .profile-content .mission p,
+    .profile-content .objective p{
+      font-size: 13px;
+    }
+    .slideshow {
+      height: 300px;
+    }
+
+    /* .experience section stlying  */
+    .experience-section h1{
+      font-size: 25px;
+    }
+    .experience h3,
+    .commitment h3,
+    .training h3{
+      font-size: 25px;
+    }
+    .experience-section p{
+      font-size: 13px;
+    }
+}

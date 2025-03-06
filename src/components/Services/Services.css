@@ -1,0 +1,340 @@
+.card {
+    --color: #FF8904;
+    --border-size: 1rem;
+    --bg-color: #252525;
+    position: relative;
+    background-color: var(--bg-color) !important;
+    border-radius: var(--border-size);
+    color: white !important;
+    display: grid;
+    place-content: center;
+    padding: 2rem 2rem;
+    isolation: isolate;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    inset: -50%;
+    z-index: -2;
+    animation: border 8s linear infinite;
+  }
+  
+  .card:hover::before {
+    animation-play-state: paused;
+  }
+  
+  
+  .card::after {
+    content: "";
+    position: absolute;
+    --inset: 0.25rem;
+    background-color: #111;
+    inset: var(--inset);
+    border-radius: calc(var(--border-size) - var(--inset));
+    z-index: -1;
+    transition: background-color 0.2s linear;
+  }
+  
+  .card:hover::after {
+    background-color: #262626
+  }
+
+  .card i {
+    margin-inline: auto;
+  }
+  .card .title {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 2rem 0 1rem;
+  }
+  
+  .card .detail {
+    text-align: center;
+    line-height: 1.3rem;
+    margin-bottom: 1.3rem;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+  }
+  
+  .modal-content {
+    background-color: #252525;
+    color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 800px;
+    animation: fadeIn 0.5s ease;
+    height: 80vh;
+    max-height: 80%; /* Limit height of modal */
+    overflow-y: auto; /* Enable vertical scrolling */
+ }
+  
+  .modal-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .modal-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+     gap: 1rem;
+   
+  }
+  
+  .modal-info {
+    flex: 1 1 300px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    
+    
+  }
+  .modal-info-title{
+    margin-bottom: 10px;
+  }
+  .modal-detail p{
+    line-height: 1.6;
+    opacity: 0.85;
+    margin-bottom:1rem;
+  }
+  
+  .slideshow {
+    flex: 1 1 300px;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    }
+    
+    .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: fade 12s infinite ease-in-out;
+    }
+    
+    .slides img:nth-child(1) { animation-delay: 0s; }
+    .slides img:nth-child(2) { animation-delay: 4s; }
+    .slides img:nth-child(3) { animation-delay: 8s; }
+    
+    @keyframes fade {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    25% { opacity: 1; }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
+    }
+  .modal-close {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.25rem;
+    background-color: transparent;
+    border: 1px solid var(--color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    margin-inline: auto;
+  }
+  
+  .modal-close:hover {
+    background-color: var(--color);
+    color: black;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideShow {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+  }
+
+  /* Gallery show in the modal  */
+  .gallery-show{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .gallery{
+    position: relative;
+    flex: 1 1 300px;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    padding: 1rem;
+    
+  }
+  .gallery-image{
+   fill: #333;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    text-align: center;
+      background-position: center;
+  }
+  /* .gallery:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  } */
+  .gallery_content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #111;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+ 
+
+}
+  .gallery:hover .gallery_content{
+    transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.gallery:hover .gallery-image {
+    scale: 0;
+  }
+  
+/* Importance and benefit in the modal */
+.importance-benefit-display{
+    width: 100%;
+}
+.importance-benefit-title{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}   
+.importance-benefit{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+      
+}
+.importance{
+    flex: 1 1 300px;
+    max-width: 500px;
+    text-align: left;
+}
+.benefit{
+    flex: 1 1 300px; 
+    max-width: 500px;
+    text-align: left;
+}
+.importance  ul h2, .benefit ul h2{
+    font-size: 25px;
+    margin-bottom: -0.3rem;
+}
+.importance  ul li, .benefit ul li{
+    list-style: none;
+    padding: 0.3rem;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #1e1e1e;
+  color: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Custom Scrollbar */
+.modal-content::-webkit-scrollbar {
+  width: 8px; /* Width of scrollbar */
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #2d2d2d; /* Track color */
+  border-radius: 14px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #f59e0b; /* Scrollbar color */
+  border-radius: 4px;
+}
+
+/* Firefox Scrollbar */
+.modal-content {
+  scrollbar-width: thin;
+  scrollbar-color: #f59e0b #2d2d2d;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgb(46, 46, 46);
+  color: #f59e0b;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.modal-close:hover {
+  color: #f5a30b;
+}
