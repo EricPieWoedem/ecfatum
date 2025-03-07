@@ -6,7 +6,7 @@ import ServicesSection from "./components/Services/Services";
 import About from "./components/About/About";
 import { Contact } from "./components/Contact";
 import TopLoadingBar from "./components/TopLoadingBar";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import About_Page from "./components/About_Page";
 import {Partners} from "./components/Partners";
 import { Projects } from "./components/projects"; 

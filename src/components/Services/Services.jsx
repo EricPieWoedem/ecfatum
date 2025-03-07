@@ -53,8 +53,7 @@ const services = [
     ],
     image1: `${import.meta.env.BASE_URL}appdev2.jpeg`,
     image2: `${import.meta.env.BASE_URL}appdev1.jpg`,
-    images: [`${import.meta.env.BASE_URL}appdev.jpg`, `${import.meta.env.BASE_URL}eco.webp`, `${import.meta.env.BASE_URL}icon.jpg`],
-    images: [`${import.meta.env.BASE_URL}appdev1.jpg`, `${import.meta.env.BASE_URL}appdev2.jpeg`,`${import.meta.env.BASE_URL}appdev3.jpg`],
+    images: [`${import.meta.env.BASE_URL}appdev.jpg`, `${import.meta.env.BASE_URL}eco.webp`, `${import.meta.env.BASE_URL}icon.jpg`, `${import.meta.env.BASE_URL}appdev1.jpg`, `${import.meta.env.BASE_URL}appdev2.jpeg`,`${import.meta.env.BASE_URL}appdev3.jpg`],
     gallery: `${import.meta.env.BASE_URL}bg8.jpg`,
     importance: [
         "Accelerates digital transformation",
