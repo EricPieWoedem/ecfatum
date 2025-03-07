@@ -9,7 +9,7 @@ import TopLoadingBar from "./components/TopLoadingBar";
 import Footer from "./components/Footer";
 import About_Page from "./components/About_Page";
 import {Partners} from "./components/Partners";
-import { Projects } from "./components/projects"; 
+import { Projects } from "./components/Projects"; 
 
 const Home = () => {
   return (
