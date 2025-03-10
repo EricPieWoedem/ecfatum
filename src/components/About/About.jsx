@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import video from '../../assets/aboutvideo.mp4';
 
 const stats = [
-  { number: '32+', title: 'Years of Experience' },
-  { number: '15', title: 'Awards Won' },
+  { number: '15+', title: 'Years of Experience' },
+  { number: '10', title: 'Awards Won' },
 ];
 
 const About = () => {

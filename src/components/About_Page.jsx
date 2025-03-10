@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 
 const stats = [
-  { number: '11', title: 'Years of Experience' },
-  { number: '15', title: 'Awards Won' }
+  { number: '15+', title: 'Years of Experience' },
+  { number: '10', title: 'Awards Won' }
 ];
 
 const images = [
