@@ -198,8 +198,8 @@ html {
 }
 
 #nprogress .bar {
-  background: linear-gradient(to right, #f59e0b, #ef4444); /* Yellow to Red */
-  height: 5px; /* Adjust thickness */
+  background: linear-gradient(to right, #f59e0b, #ef4444); 
+  height: 5px; 
 }
 
 #nprogress .spinner {

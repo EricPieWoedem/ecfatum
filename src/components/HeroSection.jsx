@@ -22,7 +22,7 @@ export const HeroSection = () => {
     offset: ["start end", "center center"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.67, 1]);
 
   return (
     <div  id="home" className="relative flex flex-col items-center pt-9 lg:pt-20 overflow-hidden">
@@ -81,7 +81,7 @@ export const HeroSection = () => {
 />
 
 <motion.h1
-        className="font-bold text-3xl sm:text-6xl lg:text-7xl text-center w-3xl"
+        className="font-semibold text-3xl w-[80%] mt-5 lg:font-bold lg:text-7xl text-center lg:w-3xl"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -93,7 +93,7 @@ export const HeroSection = () => {
         for Smart Problems
       </motion.h1>
 
-      <motion.p className="mt-10 text-center text-neutral-300 w-3xl text-2xl"
+      <motion.p className="mt-7 w-[80%] text-center text-neutral-300 lg:mt-10 lg:w-3xl lg:text-2xl"
        initial={{ opacity: 0, y: 50 }}
        animate={{ opacity: 1, y: 0 }}
        transition={{ duration: 1.5 }}>
@@ -110,19 +110,36 @@ export const HeroSection = () => {
           </Link>
       </motion.div>
 
-      <div className="flex mt-8 justify-center gap-5">
-        <motion.video
-          autoPlay
-          loop
-          muted
-          className="rounded-3xl  w-full max-w-md mx-2 my-4"
-          style={{ scale }}
-        >
-          <source src={video1} type="video/mp4" />
-          Your browser does not support this feature.
-        </motion.video>
+      <div className="flex items-center justify-center mx-5 my-8 ">
+      <motion.div 
+             style={{ scale }}
+              className="rounded-2xl lg:rounded-4xl lg:w-[40%] p-1 bg-gradient-to-tr from-yellow-500 to-red-700 shadow-[5px_5px_30px_2px_rgba(255,165,0,0.3),5px_5px_30px_2px_rgba(255,0,0,0.3)]">
+            <video
+            autoPlay
+            loop
+            muted
+            className="rounded-2xl lg:rounded-4xl w-full h-full"
+            >
+            <source src={video1} type="video/mp4" />
+            Your browser does not support this feature.
+            </video>
+        </motion.div>
+      <motion.div 
+             style={{ scale }}
+              className="rounded-2xl lg:rounded-4xl lg:w-[40%] p-1 bg-gradient-to-tr to-yellow-500 from-red-700 shadow-[5px_5px_30px_2px_rgba(255,165,0,0.3),5px_5px_30px_2px_rgba(255,0,0,0.3)]">
+            <video
+            autoPlay
+            loop
+            muted
+            className="rounded-2xl lg:rounded-4xl w-full h-full"
+            >
+            <source src={video2} type="video/mp4" />
+            Your browser does not support this feature.
+            </video>
+        </motion.div>
 
-        <motion.video
+
+        {/* <motion.video
           autoPlay
           loop
           muted
@@ -131,7 +148,7 @@ export const HeroSection = () => {
         >
           <source src={video2} type="video/mp4" />
           Your browser does not support this feature.
-        </motion.video>
+        </motion.video> */}
       </div>
     </div>
   );
