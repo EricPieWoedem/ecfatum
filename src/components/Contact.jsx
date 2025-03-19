@@ -100,7 +100,7 @@ export const Contact = () => {
                 <li className=" flex-1 flex items-center space-x-2 h-fit">
                  <div className="w-full flex flex-col items-center gap-2"><FaMapMarkerAlt className="text-amber-500 text-4xl" /> <span className="text-neutral-300">
                     <ul className="flex flex-col text-center gap-2 text-sm">
-                      <a href="https://maps.app.goo.gl/zWKRzBJcxdy5KBk49" target="_blank" rel="noopener noreferrer" className="hover:underline"><li>6-7 Saxel Street, Tesano, Accra, Ghana</li></a>
+                      <a href="https://maps.app.goo.gl/zWKRzBJcxdy5KBk49" target="_blank" rel="noopener noreferrer" className="hover:underline"><li>4 Saxel Street, Tesano, Accra, Ghana</li></a>
                         <a href="https://maps.app.goo.gl/3b1d2Pd3iJ1Hp9yE6" target="_blank" rel="noopener noreferrer" className="hover:underline"><li>35 Old Court House, Old Court Place, Kensington, London, W8 4PD, United Kingdom</li></a>
                     </ul></span>
                  </div>

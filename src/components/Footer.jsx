@@ -85,7 +85,7 @@ const Footer = () => {
             <li className="flex items-start space-x-2">
             <FaMapMarkerAlt className="text-black text-4xl"/>
               <ul className="text-sm">
-                <li className="mb-2"><a href="https://maps.app.goo.gl/zWKRzBJcxdy5KBk49" target="_blank" rel="noopener noreferrer" className="hover:underline">6-7 Saxel Street, Tesano, Accra, Ghana</a></li>
+                <li className="mb-2"><a href="https://maps.app.goo.gl/zWKRzBJcxdy5KBk49" target="_blank" rel="noopener noreferrer" className="hover:underline">4 Saxel Street, Tesano, Accra, Ghana</a></li>
                 <li><a href="https://maps.app.goo.gl/3b1d2Pd3iJ1Hp9yE6" target="_blank" rel="noopener noreferrer" className="hover:underline">35 Old Court House, Old Court Place, Kensington, London, W8 4PD, United Kingdom</a></li>
               </ul>
             </li>
